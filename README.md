@@ -1,4 +1,4 @@
-# Nerves.SSDPClient (NOT YET READY)
+# Nerves.SSDPClient
 
 **This is a very, very simple client for SSDP**
 

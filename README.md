@@ -5,8 +5,8 @@
 SSDP stands for the [Simple Service Discovery Protocol](https://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol),
 which is device and service discovery protocol built on top of [HTTPU](https://en.wikipedia.org/wiki/HTTPU).
 
-Part of the [Nerves framework](nerves-project.org), but can be used standalone.
-The only dependency is Elxir.
+Part of the [Nerves framework](http://nerves-project.org), but can be also used standalone.
+The only dependency is [Elixir](http://elixir-lang.org).
 
 ## Usage
 

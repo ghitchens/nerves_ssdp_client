@@ -10,6 +10,11 @@ defmodule Nerves.SSDPClient do
   @default_seconds 2
   @default_slack   250
 
+  @doc false
+  def start(_type, _args) do
+    {:ok, self}
+  end
+
   @doc """
   Issue an SSDP "M-SEARCH" request to the network, and listen for a bit for
   responses, reporting back discovered nodes in a hash.

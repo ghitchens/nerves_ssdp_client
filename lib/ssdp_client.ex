@@ -39,7 +39,7 @@ defmodule Nerves.SSDPClient do
     slack_ms = Dict.get params, :slack, @default_slack
     timeout_ms = (seconds * 1000) + slack_ms
     message = search_msg(target, seconds)
-    {:ok, socket} = :gen_udp.open(1900, [{:reuseaddr, true}])
+    {:ok, socket} = :gen_udp.open(0, [{:reuseaddr, true}])
     :gen_udp.send(socket, {239, 255, 255, 250}, 1900, message)
     Process.send_after self, :timeout, timeout_ms
     gather_responses_until_timeout(%{}, socket)

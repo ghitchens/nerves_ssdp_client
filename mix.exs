@@ -1,6 +1,6 @@
 defmodule Nerves.SsdpClient.Mixfile do
 
-  @version "0.1.1"
+  @version "0.1.2"
 
   use Mix.Project
 

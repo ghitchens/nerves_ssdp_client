@@ -21,16 +21,13 @@ defmodule Nerves.SSDPClient do
 
   Parameters is Dict with the following defined keyword atoms:
 
-  `target`
-  :the search target, as defined by the ssdp spec.  Defaults to "ssdp:all"
+  `target` - the search target, as defined by the ssdp spec.  Defaults to "ssdp:all"
 
-  `seconds`
-  :sent with the search request to tell nodes how long they have to
-  :respond.  Defaults to 2.
+  `seconds` -  sent with the search request to tell nodes how long they have to
+  respond.  Defaults to 2.
 
-  `slack`
-  :Number of milliseconds to wait __after__ the seconds parameter for responses.
-  :Defaults to 250, but can be set higher for high-latency networks
+  `slack` - Number of milliseconds to wait __after__ the seconds parameter for responses.
+  Defaults to 250, but can be set higher for high-latency networks
   """
 
   def discover(params \\ []) do

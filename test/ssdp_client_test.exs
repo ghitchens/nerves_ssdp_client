@@ -6,9 +6,9 @@ defmodule Nerves.SSDPClientTest do
   doctest SSDPClient
 
   @test_usn "uid:test:my_usn"
+  @test_st "nerves-project-org:test-service:1"
   @test_fields [
     location: "http://there/",
-    st: "nerves-project-org:test-service:1",
     server: "SSDPServerTest",
     "cache-control": "max-age=1800"
   ]
@@ -16,7 +16,7 @@ defmodule Nerves.SSDPClientTest do
   # `setup_all` is called once before every test
   setup_all do
     :application.start :nerves_ssdp_server
-    SSDPServer.publish @test_usn, @test_fields
+    SSDPServer.publish @test_usn, @test_st, @test_fields
     :ok
   end
 
@@ -31,8 +31,8 @@ defmodule Nerves.SSDPClientTest do
   end
 
   test "discover of custom weird search returns no results" do
-    SSDPClient.discover(target: "foobarbaz:thisshouldnotbefound", seconds: 1)
-    |> validate_discovered
+    discovered = SSDPClient.discover(target: "foobarbaz:thisshouldnotbefound", seconds: 1)
+    assert Enum.count(discovered) == 0
   end
 
   # superlame test right now to make sure we can do count on the result

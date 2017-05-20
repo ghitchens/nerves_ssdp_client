@@ -39,3 +39,12 @@ def application do
 end
 ```
 
+## Device specific examples
+
+```elixir
+# List all Belkin Wemo switches
+Nerves.SSDPClient.discover(target: "urn:Belkin:device:controllee:1")
+
+# List Chromecast devices
+Nerves.SSDPClient.discover(target: "ssdp:all")
+```

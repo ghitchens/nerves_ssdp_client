@@ -1,17 +1,17 @@
 defmodule Nerves.SsdpClient.Mixfile do
   use Mix.Project
 
-  @version "0.1.3"
+  @version "0.1.4"
 
   def project do
     [ app: :nerves_ssdp_client,
       version: @version,
-      elixir: "~> 1.2",
+      elixir: "~> 1.4",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps(),
       description: "Client for Simple Service Discovery Protocol",
-      package: package,
+      package: package(),
       name: "Nerves.SSDPClient",
       docs: docs() ]
   end

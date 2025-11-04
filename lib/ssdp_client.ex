@@ -12,7 +12,7 @@ defmodule Nerves.SSDPClient do
 
   @doc false
   def start(_type, _args) do
-    {:ok, self}
+    {:ok, self()}
   end
 
   @doc """
@@ -38,7 +38,7 @@ defmodule Nerves.SSDPClient do
     message = search_msg(target, seconds)
     {:ok, socket} = :gen_udp.open(0, [{:reuseaddr, true}])
     :gen_udp.send(socket, {239, 255, 255, 250}, 1900, message)
-    Process.send_after self, :timeout, timeout_ms
+    Process.send_after self(), :timeout, timeout_ms
     gather_responses_until_timeout(%{}, socket)
   end
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.4 (2025-11-03)
+
+* Fix compilation errors on Elixir 1.15+
+* Update deprecated `self` syntax to `self()`
+* Fix missing function call parentheses in mix.exs
+* Update minimum Elixir version requirement to ~> 1.4
+
 ## v0.1.3 (2016-07-18)
 
 * Cleaned up documentation
